@@ -1,17 +1,12 @@
-import React from 'react';
-import { Dish } from '../Dish/Dish';
+import React from "react";
+import { Dish } from "../Dish/Dish";
 
 export const Menu = ({ menu }) => {
-    return (
-        <div>
-            {menu.map((dish) => {
-                return (
-                    <Dish
-                        key={dish.id}
-                        dish={dish}
-                    />
-                );
-            })} 
-        </div>
-    );
+  return (
+    <div>
+      {menu.map(({ id, ...dish }) => {
+        return <Dish key={id} dish={dish} />;
+      })}
+    </div>
+  );
 };
